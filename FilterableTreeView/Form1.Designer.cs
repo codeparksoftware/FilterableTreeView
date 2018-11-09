@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.sqlSelectCommand1 = new System.Data.SqlClient.SqlCommand();
-            this.sqlDataAdapter1 = new System.Data.SqlClient.SqlDataAdapter();
-            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.SuspendLayout();
             // 
             // panel2
@@ -42,25 +38,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 450);
             this.panel2.TabIndex = 1;
-            // 
-            // sqlSelectCommand1
-            // 
-            this.sqlSelectCommand1.CommandText = resources.GetString("sqlSelectCommand1.CommandText");
-            this.sqlSelectCommand1.Connection = this.sqlConnection1;
-            // 
-            // sqlDataAdapter1
-            // 
-            this.sqlDataAdapter1.SelectCommand = this.sqlSelectCommand1;
-            this.sqlDataAdapter1.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
-            new System.Data.Common.DataTableMapping("Table", "Categories", new System.Data.Common.DataColumnMapping[] {
-                        new System.Data.Common.DataColumnMapping("Name", "Name"),
-                        new System.Data.Common.DataColumnMapping("CategoryId", "CategoryId"),
-                        new System.Data.Common.DataColumnMapping("ParentCategoryId", "ParentCategoryId")})});
-            // 
-            // sqlConnection1
-            // 
-            this.sqlConnection1.ConnectionString = "Data Source=.;Initial Catalog=Ostim;Integrated Security=True";
-            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
             // 
             // Form1
             // 
@@ -76,9 +53,6 @@
 
         #endregion
         private System.Windows.Forms.Panel panel2;
-        private System.Data.SqlClient.SqlCommand sqlSelectCommand1;
-        private System.Data.SqlClient.SqlConnection sqlConnection1;
-        private System.Data.SqlClient.SqlDataAdapter sqlDataAdapter1;
     }
 }
 

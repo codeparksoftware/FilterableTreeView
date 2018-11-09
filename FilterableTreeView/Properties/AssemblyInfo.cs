@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FilterableTreeView")]
+[assembly: AssemblyTitle("Filterable TreeView")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("FilterableTreeView")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2018")]
+[assembly: AssemblyCompany("CodePark")]
+[assembly: AssemblyProduct("Filterable TreeView User Control")]
+[assembly: AssemblyCopyright("Copyright © CodePark 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
