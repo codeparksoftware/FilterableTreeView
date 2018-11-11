@@ -1,6 +1,6 @@
 ﻿namespace FilterableTreeView
 {
-    partial class Form1
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.myFilterableTreeView1 = new FilterableTreeView.Concrete_Control.MyFilterableTreeView();
             this.SuspendLayout();
             // 
-            // panel2
+            // myFilterableTreeView1
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 450);
-            this.panel2.TabIndex = 1;
+            this.myFilterableTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.myFilterableTreeView1.Location = new System.Drawing.Point(0, 0);
+            this.myFilterableTreeView1.Name = "myFilterableTreeView1";
+            this.myFilterableTreeView1.Size = new System.Drawing.Size(800, 450);
+            this.myFilterableTreeView1.TabIndex = 0;
             // 
-            // Form1
+            // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel2);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.myFilterableTreeView1);
+            this.Name = "Form2";
+            this.Text = "Form2";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
+
+        private Concrete_Control.MyFilterableTreeView myFilterableTreeView1;
     }
 }
-

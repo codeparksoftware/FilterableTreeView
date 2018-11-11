@@ -10,6 +10,11 @@ using System.Windows.Forms;
 
 namespace FilterableTreeView
 {
+    /// <summary>
+    /// This form NodeId value is entered from database 
+    /// There is an difference between Form2 example that is used to parentNodeId insteadof parentNode(TreeNodeEx)
+    /// Please don't forget AddNode function have to be used
+    /// </summary>
     public partial class Form1 : Form
     {
         FilterableTreeView<TreeNodeEx> filterableTreeView;
@@ -24,7 +29,7 @@ namespace FilterableTreeView
         }
 
         private void LoadDummyData()
-        {
+        {//check the all node added to its parent
             DataSet dataSet = new DataSet();
             dataSet.ReadXml("Data.xml");
             for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
