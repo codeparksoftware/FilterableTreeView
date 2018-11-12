@@ -1,4 +1,6 @@
-﻿namespace FilterableTreeView
+﻿using FilterableTreeView.TextBoxEx;
+
+namespace FilterableTreeView
 {
     partial class FilterableTreeView<T> 
     {
@@ -28,7 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FilterTextBox = new System.Windows.Forms.TextBox();
+            this.FilterTextBox = new SearchTextBox();
             this.treeView = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
@@ -67,7 +69,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox FilterTextBox;
+        private SearchTextBox FilterTextBox;
         private System.Windows.Forms.TreeView treeView;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace FilterableTreeView
 {
@@ -18,21 +19,22 @@ namespace FilterableTreeView
     /// 
     public partial class FilterableTreeView<T> : UserControl where T : TreeNodeEx
     {
-
-
+   
 
         object LOCK_OBJECT = new object();//lock obj
         public FilterableTreeView()
         {
             InitializeComponent();
+
+          
             TreeDictionary = new Dictionary<int, T>();
             FilteredList = new Dictionary<int, T>();
-           
+
         }
 
-       
+
         /// <summary>
-        /// All treeview node will be store in this dictionary type collection
+        /// All treeview node will be kept in this dictionary type collection
         /// 
         /// </summary>
         public readonly Dictionary<int, T> TreeDictionary;
@@ -43,20 +45,20 @@ namespace FilterableTreeView
         private Dictionary<int, T> FilteredList;
 
         /// <summary>
-        /// AddNode function provides that  adding the child node to the parent node or root of treeview
+        /// AddNode function provides that  adds the child node to the parent node or root of treeview
         /// If you want,you  may set your child node id from db by primary key or autoincrement field 
         /// Every node must have unique nodeid and have parentnodeid  
         /// </summary>
-        /// <param name="parentNodeId">parentNodeId is NodeId of parent node of the child node.If the node is root node parent node has to be null.</param>
+        /// <param name="parentNodeId">parentNodeId is NodeId of parent node of the child node.If the node is root node parent node should be null.</param>
         /// <param name="child">child is currently being added node</param>
-        /// <returns>return nodes sequence number</returns>
+        /// <returns>return  NodeId of the currently being added child node</returns>
         public int AddNode(int parentNodeId, T child)
         {
             lock (LOCK_OBJECT)//Provides multithread safe
             {
                 if (child.NodeId < 0)
                 {
-                    child.NodeId = TreeDictionary.Count+1;
+                    child.NodeId = TreeDictionary.Count + 1;
                 }
 
                 TreeDictionary.Add(child.NodeId, child);
@@ -73,27 +75,27 @@ namespace FilterableTreeView
                     child.ParentNodeId = tmp.NodeId;
                     tmp.Nodes.Add(child);
                 }
-                return TreeDictionary.Count+1;
+                return TreeDictionary.Count + 1;
 
             }
         }
 
 
         /// <summary>
-        /// AddNode function provides that  adding the child node to the parent node or root of treeview
+        /// AddNode function provides that  adds the child node to the parent node or root of treeview
         /// If you want,you  may set your child node id from db by primary key or autoincrement field 
         /// Every node must have unique nodeid and have parentnodeid  
         /// </summary>
-        /// <param name="parent">parent is parent node of the child node.If the node is root node parent node has to be null.</param>
+        /// <param name="parent">parent is parent node of the child node.If the node is root node parent node should be null.</param>
         /// <param name="child">child is currently being added node</param>
-        /// <returns>return nodes sequence number</returns>
+        /// <returns>return  NodeId of the currently being added child node</returns>
         public int AddNode(T parentNode, T child)
         {
             lock (LOCK_OBJECT)//Provides multithread safe
             {
                 if (child.NodeId < 0)
                 {
-                    child.NodeId = TreeDictionary.Count+1;
+                    child.NodeId = TreeDictionary.Count + 1;
                 }
 
                 TreeDictionary.Add(child.NodeId, child);
@@ -111,12 +113,12 @@ namespace FilterableTreeView
                     child.ParentNodeId = parentNode.NodeId;
                     parentNode.Nodes.Add(child);
                 }
-                return TreeDictionary.Count+1;
+                return TreeDictionary.Count + 1;
             }
         }
 
         /// <summary>
-        /// If you added another property you should assign them at here
+        /// If you added another property you should assign them new Instance Of T at here
         /// </summary>
         /// <param name="ex">Currently shown node on the treeview</param>
         /// <returns></returns>

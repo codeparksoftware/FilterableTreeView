@@ -81,6 +81,12 @@
     <Compile Include="AutoNodeId\MyClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextBoxEx\SearchTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextBoxEx\SearchTextBox.Designer.cs">
+      <DependentUpon>SearchTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="TreeNodeEx.cs" />
     <EmbeddedResource Include="FilterableTreeView.resx">
       <DependentUpon>FilterableTreeView.cs</DependentUpon>
